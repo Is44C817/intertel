@@ -83,6 +83,7 @@ input[type=text] {
   box-sizing: border-box;
   background-color: black;
   font-size: 0.8rem;
+  color: white
 }
 
 .space {
@@ -118,4 +119,16 @@ input[type=text] {
 
 .header-bg {
   background-color: #9276E3;
+}
+
+.resultado {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 15rem;
+}
+
+.error {
+  background-color: red;
+  color: white;
+  text-align: center;
 }

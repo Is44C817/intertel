@@ -3,7 +3,7 @@ const Resultado = () => {
     return (
         <>
             <div className="w-1/2">
-                Resultado
+                <p className="resultado">Tu resultado: 28.1%</p>
             </div>
         </>
     )
