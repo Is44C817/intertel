@@ -1,24 +1,58 @@
 import { useState, useEffect } from "react";
+import Error from "./Error";
 
-const Formulario = () => {
-
+const Formulario = ({ resultados, setResultados }) => {
+    const [genero, setGenero] = useState('')
     const [altura, setAltura] = useState('')
     const [peso, setPeso] = useState('')
     const [cintura, setCintura] = useState('')
     const [cuello, setCuello] = useState('')
+    const [resultado, setResultado] = useState('')
+
 
     const [error, setError] = useState(false)
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if ([altura, peso, cintura, cuello].includes('')) {
+        if ([genero, altura, cintura, cuello].includes('')) {
             console.log('Hay al menos un campo vacio')
             setError(true)
             return;
         }
+        let res;
+        if (genero === 'H') {
+            res = ((495 / (1.0234 - 0.19055 * Math.log10(10) * (cintura - cuello)) + 0.15456 * Math.log10(10) * altura)) - 450
+            console.log('resultado H', res)
+            setResultado(res)
+
+        } else {
+            res = ((495 / (1.29579 - 0.35004 * Math.log10(10) * (cintura + peso - cuello)) + 0.22100 * Math.log10(10) * altura)) - 450
+            console.log('resultado M', res)
+            setResultado(res)
+        }
 
         setError(false)
+
+        const objetoCalculadora = {
+            genero,
+            altura,
+            peso,
+            cintura,
+            cuello,
+            resultado
+        }
+
+        setResultados([...resultados, objetoCalculadora])
+
+        //reinicar formulario
+        setGenero('')
+        setAltura('')
+        setPeso('')
+        setCintura('')
+        setCuello('')
+        setResultado('')
+
     }
 
     return (
@@ -31,18 +65,22 @@ const Formulario = () => {
                 <form onSubmit={handleSubmit}>
 
                     {error && (
-                        <div>
-                            <p className="error">Todos los campos son obligatorios</p>
-                        </div>
+                        <Error />
                     )}
                     <label className="genero">Género</label>
                     <div className="row">
                         <div className="column" >
-                            <input type="radio" id="hombre" />
+                            <input type="radio" id="hombre"
+                                value="H"
+                                name="genero"
+                                onChange={(e) => setGenero(e.target.value)} />
                             <label for="hombre" className="radios">Hombre</label>
                         </div>
                         <div className="column" >
-                            <input type="radio" id="mujer" />
+                            <input type="radio" id="mujer"
+                                value="M"
+                                name="genero"
+                                onChange={(e) => setGenero(e.target.value)} />
                             <label for="mujer"
                                 className="radios">Mujer</label>
                         </div>
@@ -105,7 +143,8 @@ const Formulario = () => {
                             <button class="button-calcular">Calcular</button>
                         </div>
                         <div className="column" >
-                            <button class="button-limpiar">Limpiar</button>
+                            <button class="button-limpiar"
+                                onclick="limpiar()">Limpiar</button>
                         </div>
                     </div>
 
