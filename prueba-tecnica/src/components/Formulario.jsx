@@ -43,15 +43,15 @@ const Formulario = ({ resultados, setResultados }) => {
             resultado
         }
 
-        setResultados([...resultados, objetoCalculadora])
+        setResultados(objetoCalculadora)
 
         //reinicar formulario
-        setGenero('')
-        setAltura('')
-        setPeso('')
-        setCintura('')
-        setCuello('')
-        setResultado('')
+        /*         setGenero('')
+                setAltura('')
+                setPeso('')
+                setCintura('')
+                setCuello('')
+                setResultado('') */
 
     }
 
@@ -140,7 +140,7 @@ const Formulario = ({ resultados, setResultados }) => {
 
                     <div className="row">
                         <div className="column" >
-                            <button class="button-calcular">Calcular</button>
+                            <button class="button-calcular" value={resultado}>Calcular</button>
                         </div>
                         <div className="column" >
                             <button class="button-limpiar"

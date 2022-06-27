@@ -15,7 +15,9 @@ function App() {
         <Formulario
           resultados={resultados}
           setResultados={setResultados} />
-        <Resultado />
+        <Resultado
+          resultados={resultados}
+          setResultados={setResultados} />
       </div>
     </div>
   )

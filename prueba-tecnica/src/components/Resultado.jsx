@@ -1,11 +1,18 @@
-const Resultado = () => {
+const Resultado = ({ resultados, setResultados }) => {
+
+    console.log('componente resultado', resultados)
+    console.log('resultado', resultados.resultado)
+
+    const { resultado } = resultados;
 
     return (
+
         <>
             <div className="w-1/2">
-                <p className="resultado">Tu resultado: 28.1%</p>
+                <p className="resultado">Tu resultado: {resultado} %</p>
             </div>
         </>
+
     )
 }
 
