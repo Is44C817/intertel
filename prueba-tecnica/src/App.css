@@ -1,0 +1,121 @@
+body {
+  background-color: black;
+}
+
+p {
+  color: white;
+}
+
+.title-header {
+  margin-left: 7rem;
+  font-size: 0.8rem;
+  margin-top: -1.2rem;
+}
+
+.logo {
+  margin-left: 3rem;
+}
+
+.burger {
+  margin-left: 77rem;
+  margin-top: -1.2rem;
+}
+
+.contenedor {
+  margin-left: 3rem;
+}
+
+.general-title {
+  font-size: 2.5rem;
+  font-weight: 500;
+  width: 80%;
+}
+
+.title-second {
+  padding-top: 1rem;
+  font-size: 0.8rem;
+  color: gray;
+  width: 70%;
+}
+
+.title-third {
+  padding-top: 1rem;
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.genero {
+  padding-top: 1rem;
+  font-size: 0.8rem;
+  color: white
+}
+
+.column {
+  float: left;
+  padding: 10px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.radios {
+  font-size: 0.8rem;
+  color: white;
+  margin-left: 0.5rem;
+}
+
+.altura {
+  padding-top: 1rem;
+  font-size: 0.8rem;
+  color: white
+}
+
+input[type=text] {
+  width: 70%;
+  padding: 5px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid white;
+  border-radius: 30px;
+  box-sizing: border-box;
+  background-color: black;
+  font-size: 0.8rem;
+}
+
+.space {
+  margin-top: 0.1rem;
+}
+
+.button-calcular {
+  background-color: #9276E3;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-radius: 30px;
+  margin-left: -0.5rem;
+}
+
+.button-limpiar {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.header-bg {
+  background-color: #9276E3;
+}
